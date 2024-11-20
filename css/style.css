@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #002f6c;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+header .logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 150px;
+}
+
+h1 {
+    color: #002f6c;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #555;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: #002f6c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #00509e;
+}
+
+.hidden {
+    display: none;
+}
+
+.clap-icon {
+    display: block;
+    margin: 20px auto;
+    max-width: 100px;
+}

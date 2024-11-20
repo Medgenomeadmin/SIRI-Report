@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See it, Report it - SIRI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/company-logo.png" alt="Company Logo" class="logo">
+        </header>
+
+        <main id="form-container">
+            <h1>Reason for Creating This Page</h1>
+            <p>We aim to ensure safety, cleanliness, and functionality across our office premises by encouraging employees to report observations promptly.</p>
+
+            <form id="siri-form">
+                <label for="emp-id">Employee ID:</label>
+                <input type="text" id="emp-id" name="emp-id" required>
+
+                <label for="emp-name">Name:</label>
+                <input type="text" id="emp-name" name="emp-name" required>
+
+                <label for="location">Location of the Issue (Floor):</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="exact-area">Exact Room/Area of Observation:</label>
+                <input type="text" id="exact-area" name="exact-area" required>
+
+                <label for="observation-type">Type of Observation:</label>
+                <select id="observation-type" name="observation-type" required>
+                    <option value="safety-hazard">Safety Hazard</option>
+                    <option value="fire-hazard">Fire Hazard</option>
+                    <option value="cleaning-issue">Cleaning Issue</option>
+                    <option value="consumable-unavailability">Unavailability of Consumable</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="picture">Upload Picture:</label>
+                <input type="file" id="picture" name="picture" accept="image/*" capture="environment" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+
+        <section id="thank-you-message" class="hidden">
+            <header>
+                <img src="images/company-logo.png" alt="Company Logo" class="logo">
+            </header>
+            <h1>SIRI - See it, Report it!</h1>
+            <p>Thank you for your submission. Your report has been sent to the Admin team, and they will address it shortly to maintain a safe and productive environment.</p>
+            <img src="images/clap-icon.png" alt="Clap Icon" class="clap-icon">
+        </section>
+    </div>
+</body>
+</html>
