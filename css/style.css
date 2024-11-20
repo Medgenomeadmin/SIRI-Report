@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 100%;
     margin: 20px auto;
     padding: 20px;
     border: 2px solid #002f6c;
@@ -67,4 +67,19 @@ form button:hover {
     display: block;
     margin: 20px auto;
     max-width: 100px;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    header .logo {
+        max-width: 120px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
 }

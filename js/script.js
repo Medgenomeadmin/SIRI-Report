@@ -19,15 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             );
 
-            if (response.ok) {
+            // Log response details for debugging
+            const responseBody = await response.json();
+            console.log('Response:', responseBody);
+
+            if (response.ok && responseBody.status === 'success') {
                 // Hide form and show thank-you message if submission is successful
                 formContainer.style.display = 'none';  // Hide the form
                 thankYouMessage.style.display = 'block';  // Show the thank-you message
             } else {
-                alert('There was an error submitting your report. Please try again.');
+                // Log the error if the response indicates failure
+                alert(`Error: ${responseBody.message || 'Unknown error'}`);
             }
         } catch (error) {
-            alert('An error occurred: ' + error.message);
+            console.error('Error during form submission:', error);
+            alert('An error occurred while submitting the form. Please try again later.');
         }
     });
 });
