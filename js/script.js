@@ -1,34 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('siri-form');
-    const formContainer = document.getElementById('form-container');
-    const thankYouMessage = document.getElementById('thank-you-message');
 
     form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Prevents form from submitting the default way
+        e.preventDefault(); // Prevents default form submission behavior
 
-        // Collect form data
         const formData = new FormData(form);
 
         try {
-            // Your Google Apps Script URL
             const response = await fetch(
-                'https://script.google.com/macros/s/AKfycbwDkvlXJ5trhRBrd0A9GY24e_pnBv3lYPNXeKMBRR1wPpyhdme8m71jtdoNgUOPikfH/exec', 
+                'https://script.google.com/macros/s/AKfycbwDkvlXJ5trhRBrd0A9GY24e_pnBv3lYPNXeKMBRR1wPpyhdme8m71jtdoNgUOPikfH/exec',
                 {
                     method: 'POST',
                     body: formData,
                 }
             );
 
-            // Log response details for debugging
             const responseBody = await response.json();
             console.log('Response:', responseBody);
 
             if (response.ok && responseBody.status === 'success') {
-                // Hide form and show thank-you message if submission is successful
-                formContainer.style.display = 'none';  // Hide the form
-                thankYouMessage.style.display = 'block';  // Show the thank-you message
+                window.location.href = 'thanks.html'; // Redirect to thank-you page
             } else {
-                // Log the error if the response indicates failure
                 alert(`Error: ${responseBody.message || 'Unknown error'}`);
             }
         } catch (error) {
